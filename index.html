@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the cosmic portfolio of Brett Hinzman, a professional with out-of-this-world experiences.">
+    <title>Cosmic Portfolio | Brett Hinzman</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --background-color: #000033;
+            --text-color: #ffffff;
+            --card-background: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+
+        #stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 51, 0.8);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 51, 0.95);
+        }
+
+        #space-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #space-nav li {
+            margin: 0 20px;
+        }
+
+        #space-nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Orbitron', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        #space-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .cta-button, .download-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .cta-button:hover, .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background-color: rgba(0, 255, 255, 0.2);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 51, 0.8);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #rocket {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2300ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+            background-size: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: none;
+        }
+
+        #rocket:hover {
+            transform: translateY(-5px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Changed from 0.5s to 0.3s */
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #resume {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .linkedin-link svg {
+            margin-right: 10px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--primary-color);
+        }
+
+        /* New style for the email link */
+        #contact a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            #space-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #space-nav li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="stars-container"></div>
+    <header>
+        <nav id="space-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to My Cosmic Portfolio</h1>
+            <p>Embark on a journey through the professional universe I've explored</p>
+            <a href="#about" class="cta-button">Discover More</a>
+        </section>
+        <section id="about">
+            <h2>About the Explorer</h2>
+            <img src="your-image-filename.jpg" alt="Brett Hinzman" class="profile-image fade-in">
+            <p class="fade-in">As a passionate professional, I navigate through complex challenges with the precision of a cosmic explorer. With a keen eye for detail and a love for innovative solutions, I bring ideas to life in the vast expanse of my career.</p>
+            <div class="skills fade-in">
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Strategic Thinking</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Financial Analysis</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Communication</span>
+            </div>
+            <a href="https://www.linkedin.com/in/bretthinzman" target="_blank" class="linkedin-link fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                Connect on LinkedIn
+            </a>
+        </section>
+        <section id="resume">
+            <h2>My Cosmic Resume</h2>
+            <p>Download my resume to learn more about my stellar experience and skills.</p>
+            <a href="Brett_Hinzman_Resume.pdf" download class="download-button">Download Resume</a>
+        </section>
+        <section id="contact">
+            <h2>Contact the Explorer</h2>
+            <p class="fade-in">Ready to embark on a cosmic journey together? Feel free to reach out!</p>
+            <div class="contact-info fade-in">
+                <p><strong>Cell Phone:</strong> 443-643-6778</p>
+                <p><strong>Email:</strong> <a href="mailto:Brett.Hinzman@gmail.com">Brett.Hinzman@gmail.com</a></p>
+            </div>
+            <p class="fade-in">Don't hesitate to contact me for any inquiries or potential collaborations. Let's explore new professional galaxies together!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cosmic Portfolio | Designed and developed by Brett Hinzman</p>
+    </footer>
+    <div id="rocket"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            setupSmoothScrolling();
+            window.addEventListener('scroll', debounce(function() {
+                revealSections();
+                handleHeaderScroll();
+                handleRocketVisibility();
+            }, 100));
+            setupRocket();
+        });
+
+        function createStars() {
+            const starsContainer = document.getElementById('stars-container');
+            const starCount = 200;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        function revealSections() {
+            const sections = document.querySelectorAll('.fade-in');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.9) { // Changed from 0.75 to 0.9
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        function handleHeaderScroll() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        function handleRocketVisibility() {
+            const rocket = document.getElementById('rocket');
+            rocket.style.display = window.scrollY > 300 ? 'block' : 'none';
+        }
+
+        function setupRocket() {
+            const rocket = document.getElementById('rocket');
+            rocket.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
+</body>
+</html>
