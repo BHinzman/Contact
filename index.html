@@ -351,6 +351,49 @@
             animation: pulse 3s infinite;
         }
 
+        /* CERTIFICATION BADGE STYLES */
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-badge:hover {
+            transform: translateX(10px);
+            background: rgba(52, 152, 219, 0.2);
+        }
+        
+        .cert-badge img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .cert-info {
+            text-align: left;
+            flex-grow: 1;
+        }
+        
+        .cert-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-link:hover {
+            background: var(--primary-color);
+            color: #000;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -408,14 +451,14 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <img src="your-image-filename.jpg" alt="Brett Hinzman" />
-        <p>I’m a results-driven Lean Six Sigma Black Belt with a master's degree in management 
+        <p>I'm a results-driven Lean Six Sigma Black Belt with a master's degree in management 
             and over 10 years of leadership experience in high-stakes environments, 
             including financial markets, the Department of Defense, and emergency management. 
-            I’ve got a proven track record of leveraging Six Sigma methodologies to drive process 
-            optimization, operational efficiency, and continuous improvement. I’m adept at strategic thinking, 
+            I've got a proven track record of leveraging Six Sigma methodologies to drive process 
+            optimization, operational efficiency, and continuous improvement. I'm adept at strategic thinking, 
             cross-functional collaboration, and effective communication, with expertise in conveying complex ideas 
             to a wide range of audiences through training, presentations, and published market analyses. 
-            In addition, I’m proficient in Microsoft Office Suite, with knowledge of advanced Excel capabilities including arrays, pivot tables, conditional formatting, and macros.</p>
+            In addition, I'm proficient in Microsoft Office Suite, with knowledge of advanced Excel capabilities including arrays, pivot tables, conditional formatting, and macros.</p>
     </section>
     <section id="philosophy" class="philosophy">
         <h2>Cosmic Curiosity & Existential Momentum</h2>
@@ -512,9 +555,27 @@
     </section>
     <section id="certifications" class="certifications">
         <h2>Certifications</h2>
+        
+        <div class="cert-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--primary-color)">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <div class="cert-info">
+                <h3>Lean Six Sigma Black Belt (ICBB)</h3>
+                <p>The Council for Six Sigma Certification (CSSC) | August 2024</p>
+                <p>Certified expert in advanced process improvement and quality management techniques with a thorough understanding of Six Sigma philosophies, principles, and the DMAIC model :cite[1].</p>
+            </div>
+            <a href="Lean_Six_Sigma_Black_Belt_Certificate.pdf" class="cert-link" target="_blank">View Certificate</a>
+        </div>
+        
         <ul>
-            <li><strong>Lean Six Sigma Black Belt (LSSBB):</strong> Certified expert in advanced process improvement and quality management techniques.</li>
-            <!-- You can add more certifications here as list items -->
+            <li><strong>Key Certification Details:</strong>
+                <ul>
+                    <li>Certification never expires - permanent credential :cite[1]</li>
+                    <li>Demonstrates mastery of team leadership and process optimization</li>
+                    <li>Issued by the official industry standard for Six Sigma accreditation :cite[1]</li>
+                </ul>
+            </li>
         </ul>
     </section>
     <section id="resume" class="resume">
