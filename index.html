@@ -85,7 +85,7 @@
         }
 
         .intro {
-            background: url('/api/placeholder/1600/900') no-repeat center center/cover;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
             padding: 200px 20px;
             position: relative;
@@ -121,6 +121,8 @@
             position: relative;
             animation: fadeInUp 2s ease-in-out;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .about, .projects, .skills, .resume, .upwork, .linkedin, .philosophy, .certifications {
@@ -283,6 +285,72 @@
             margin-bottom: 20px;
         }
 
+        /* PHILOSOPHY SECTION ENHANCEMENTS */
+        .philosophy-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .philosophy-item {
+            background: linear-gradient(145deg, #2c2c2c, #252525);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .philosophy-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(243, 156, 18, 0.25);
+        }
+
+        .philosophy-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .philosophy-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .cosmic-quote {
+            font-style: italic;
+            font-size: 1.3em;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px 30px;
+            margin: 50px auto;
+            max-width: 800px;
+            position: relative;
+            background: rgba(52, 152, 219, 0.05);
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .quote-pulse {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(52, 152, 219, 0.2);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -298,15 +366,24 @@
             to { transform: translateX(0); }
         }
 
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+            100% { transform: scale(0.8); opacity: 0.7; }
+        }
+
         @media (max-width: 1024px) {
-            .skill-item {
+            .skill-item, .philosophy-item {
                 width: calc(50% - 40px);
             }
         }
 
         @media (max-width: 768px) {
-            .project-item, .skill-item {
+            .project-item, .skill-item, .philosophy-item {
                 width: 100%;
+            }
+            section {
+                padding: 80px 20px;
             }
         }
     </style>
@@ -341,8 +418,44 @@
             In addition, I’m proficient in Microsoft Office Suite, with knowledge of advanced Excel capabilities including arrays, pivot tables, conditional formatting, and macros.</p>
     </section>
     <section id="philosophy" class="philosophy">
-        <h2>Philosophy</h2>
-        <p>I believe in continuous learning and fearless innovation. I approach every challenge with curiosity and an analytical mindset, viewing obstacles as opportunities to grow. Embracing emerging technologies and methodologies helps me stay adaptable and future-focused. I strive to stay ahead of the curve, push boundaries, and shape the future rather than just watch it unfold.</p>
+        <h2>Cosmic Curiosity & Existential Momentum</h2>
+        
+        <div class="philosophy-container">
+            <div class="philosophy-item">
+                <h3>🌌 The Universe in a Grain of Data</h3>
+                <p>I perceive existence as layered universes - from quantum foam to galactic superclusters, each revealing profound patterns when examined with wonder. Data isn't just numbers; it's the universe whispering its secrets through mathematical poetry. My analytical work is how I listen.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>♾️ The Eternal Student Principle</h3>
+                <p>True expertise lies in maintaining beginner's mind. I approach technology like quantum physics: the more I learn, the more I realize everything connects in beautiful, unexpected ways. Mastery isn't a destination but a continuous state of becoming.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>⚡ Ethical Accelerationism</h3>
+                <p>While technology evolves at exponential speed, our humanity must remain the control system. I champion the <strong>Red Queen Hypothesis of Progress</strong>: We must run ethically just to maintain our position. Every algorithmic advancement should elevate consciousness, not just capability.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>🌱 The Optimistic Singularity</h3>
+                <p>I anticipate a future where human intuition merges with machine intelligence to solve grand challenges. Imagine analytics that doesn't just predict supply chains but models ecosystem restoration. Envision AI that translates whale songs while optimizing cancer treatment algorithms. This isn't sci-fi - it's the horizon we're racing toward.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>🧠 The Mind as Playground</h3>
+                <p>Data visualization is my cognitive rollercoaster - where raw information becomes experiential insight. Like a child spinning on a merry-go-round, I seek that vertigo moment when complex patterns suddenly click into elegant clarity. This is how we'll eventually "manipulate digital reality" to heal and create.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>✨ Legacy Through Amplification</h3>
+                <p>My existential purpose: To be an intellectual signal booster. I measure impact not by personal glory but by how many minds I help tune to the universe's frequency. When we empower others to see patterns and ask better questions, we collectively evolve the human story.</p>
+            </div>
+        </div>
+        
+        <blockquote class="cosmic-quote">
+            "We're not just analyzing data - we're decoding reality's source code. Every insight gained is another star mapped in humanity's cognitive constellation."
+            <div class="quote-pulse"></div>
+        </blockquote>
     </section>
     <section id="upwork" class="upwork">
         <h2>My Upwork Profile</h2>
