@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brett Hinzman - Digital Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         :root {
             --primary-color: #f39c12;
@@ -40,6 +40,12 @@
         header.scrolled {
             padding: 10px;
             background-color: rgba(34, 34, 34, 0.95);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            margin: 0;
         }
 
         nav {
@@ -103,6 +109,11 @@
             position: relative;
             animation: fadeIn 2s ease-in-out;
             z-index: 2;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
 
         .intro p {
@@ -112,7 +123,7 @@
             z-index: 2;
         }
 
-        .about, .projects, .skills, .resume {
+        .about, .projects, .skills, .resume, .upwork, .linkedin, .philosophy, .certifications {
             background-color: #333;
             margin: 20px 0;
             padding: 50px;
@@ -120,7 +131,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        .about p, .projects p, .skills p, .resume p {
+        .about p, .projects p, .skills p, .resume p, .upwork p, .philosophy p, .linkedin p {
             animation: slideIn 1.5s ease-in-out;
         }
 
@@ -265,6 +276,13 @@
             box-shadow: 0 10px 20px rgba(52, 152, 219, 0.5);
         }
 
+        section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -298,28 +316,34 @@
         <h1>Welcome to My Digital Portfolio</h1>
         <nav>
             <a href="#about">About Me</a>
+            <a href="#philosophy">Philosophy</a>
             <a href="#upwork">Upwork</a>
             <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
             <a href="#resume">Resume</a>
             <a href="#linkedin">LinkedIn</a>
         </nav>
     </header>
     <section id="intro" class="intro">
         <h1>Hi, I'm Brett Hinzman</h1>
-        <p>An analytical and curious professional with a passion for continuous learning.</p>
+        <p>An analytical and curious professional with a passion for continuous learning, fearlessly embracing the future and all its opportunities.</p>
     </section>
     <section id="about" class="about">
         <h2>About Me</h2>
-        <img src="your-image-filename.jpg" alt="Brett Hinzman">
-        <p>I’m a results-driven Lean Six Sigma Black Belt with a master's degree in management
+        <img src="your-image-filename.jpg" alt="Brett Hinzman" />
+        <p>I’m a results-driven Lean Six Sigma Black Belt with a master's degree in management 
             and over 10 years of leadership experience in high-stakes environments, 
             including financial markets, the Department of Defense, and emergency management. 
-            I’ve got a proven track record of leveraging Six Sigma methodologies to drive process
-            optimization, operational efficiency, and continuous improvement. I’m adept at strategic thinking,
-            cross-functional collaboration, and effective communication, with expertise in conveying complex ideas
+            I’ve got a proven track record of leveraging Six Sigma methodologies to drive process 
+            optimization, operational efficiency, and continuous improvement. I’m adept at strategic thinking, 
+            cross-functional collaboration, and effective communication, with expertise in conveying complex ideas 
             to a wide range of audiences through training, presentations, and published market analyses. 
-            In addition, I’m proficient in Microsoft Office Suite, with knowledge of advanced Excel capabilities including arrays, pivot tables, conditional formatting, and macros. </p>
-     </section>
+            In addition, I’m proficient in Microsoft Office Suite, with knowledge of advanced Excel capabilities including arrays, pivot tables, conditional formatting, and macros.</p>
+    </section>
+    <section id="philosophy" class="philosophy">
+        <h2>Philosophy</h2>
+        <p>I believe in continuous learning and fearless innovation. I approach every challenge with curiosity and an analytical mindset, viewing obstacles as opportunities to grow. Embracing emerging technologies and methodologies helps me stay adaptable and future-focused. I strive to stay ahead of the curve, push boundaries, and shape the future rather than just watch it unfold.</p>
+    </section>
     <section id="upwork" class="upwork">
         <h2>My Upwork Profile</h2>
         <p>I am a Top-Rated Freelance Consultant on Upwork, specializing in data analysis, financial modeling, process optimization, and strategic reporting. My work spans various industries, including finance, defense, and consulting. I have a proven record of delivering high-quality projects on time, maintaining clear communication, and exceeding client expectations.</p>
@@ -373,6 +397,13 @@
             </div>
         </div>
     </section>
+    <section id="certifications" class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li><strong>Lean Six Sigma Black Belt (LSSBB):</strong> Certified expert in advanced process improvement and quality management techniques.</li>
+            <!-- You can add more certifications here as list items -->
+        </ul>
+    </section>
     <section id="resume" class="resume">
         <h2>Resume</h2>
         <p>Click the button below to download my resume.</p>
@@ -381,7 +412,7 @@
     <section id="linkedin" class="linkedin">
         <h2>LinkedIn</h2>
         <p>View my profile and follow me on LinkedIn.</p>
-        <a href="https://www.linkedin.com/in/bretthinzman/" target="_blank"><button>View LinkedIn Profile</button></a>
+        <a href="https://www.linkedin.com/in/bretthinzman/" target="_blank" rel="noopener noreferrer"><button>View LinkedIn Profile</button></a>
     </section>
     <footer>
         <p>&copy; 2025 Brett Hinzman. All rights reserved.</p>
