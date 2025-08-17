@@ -22,7 +22,6 @@
             background-color: var(--background-color);
             color: var(--text-color);
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
         header {
@@ -54,7 +53,6 @@
             justify-content: center;
             gap: 20px;
             margin: 20px 0;
-            flex-wrap: wrap;
         }
 
         nav a {
@@ -63,7 +61,6 @@
             font-weight: bold;
             transition: all 0.3s ease;
             position: relative;
-            padding: 5px 10px;
         }
 
         nav a::after {
@@ -117,7 +114,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: transparent;
-            margin-bottom: 20px;
         }
 
         .intro p {
@@ -129,7 +125,7 @@
             margin: 0 auto;
         }
 
-        .about, .projects, .skills, .resume, .upwork, .linkedin, .philosophy, .certifications, .career-compass {
+        .about, .projects, .skills, .resume, .upwork, .linkedin, .philosophy, .certifications {
             background-color: #333;
             margin: 20px 0;
             padding: 50px;
@@ -286,8 +282,7 @@
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 30px;
-            font-size: 2.2em;
+            margin-bottom: 20px;
         }
 
         /* PHILOSOPHY SECTION ENHANCEMENTS */
@@ -330,7 +325,6 @@
             color: var(--primary-color);
             margin-top: 0;
             font-size: 1.4em;
-            margin-bottom: 15px;
         }
 
         .cosmic-quote {
@@ -344,7 +338,6 @@
             background: rgba(52, 152, 219, 0.05);
             text-align: center;
             font-weight: 300;
-            line-height: 1.8;
         }
 
         .quote-pulse {
@@ -376,10 +369,9 @@
             background: rgba(52, 152, 219, 0.2);
         }
         
-        .cert-badge svg {
-            min-width: 60px;
-            height: 60px;
-            fill: var(--primary-color);
+        .cert-badge img {
+            width: 80px;
+            height: 80px;
         }
         
         .cert-info {
@@ -395,85 +387,11 @@
             border: 2px solid var(--primary-color);
             border-radius: 30px;
             transition: all 0.3s ease;
-            text-decoration: none;
         }
         
         .cert-link:hover {
             background: var(--primary-color);
             color: #000;
-        }
-
-        /* CAREER COMPASS STYLES */
-        .career-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            text-align: left;
-        }
-        
-        .career-card {
-            background: linear-gradient(145deg, #2a2a2a, #222);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(52, 152, 219, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .career-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
-            border-color: var(--secondary-color);
-        }
-        
-        .career-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.3em;
-            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
-            padding-bottom: 10px;
-        }
-        
-        .company-list {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .company-list li {
-            margin-bottom: 8px;
-        }
-        
-        .profile-insights {
-            background: rgba(243, 156, 18, 0.1);
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: left;
-            border: 1px solid rgba(243, 156, 18, 0.3);
-        }
-        
-        .profile-insights h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .strategy-item {
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-            border: 1px solid rgba(52, 152, 219, 0.2);
-        }
-        
-        .strategy-item h4 {
-            color: var(--secondary-color);
-            margin-top: 0;
         }
 
         @keyframes fadeIn {
@@ -498,44 +416,17 @@
         }
 
         @media (max-width: 1024px) {
-            .skill-item, .philosophy-item, .career-card {
+            .skill-item, .philosophy-item {
                 width: calc(50% - 40px);
-            }
-            section {
-                padding: 80px 30px;
             }
         }
 
         @media (max-width: 768px) {
-            .project-item, .skill-item, .philosophy-item, .career-card {
+            .project-item, .skill-item, .philosophy-item {
                 width: 100%;
             }
             section {
-                padding: 70px 20px;
-            }
-            .intro {
-                padding: 150px 20px;
-            }
-            .intro h1 {
-                font-size: 2.8em;
-            }
-            nav {
-                gap: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            section {
-                padding: 60px 15px;
-            }
-            .intro h1 {
-                font-size: 2.2em;
-            }
-            .intro p {
-                font-size: 1.2em;
-            }
-            section h2 {
-                font-size: 1.8em;
+                padding: 80px 20px;
             }
         }
     </style>
@@ -546,7 +437,6 @@
         <nav>
             <a href="#about">About Me</a>
             <a href="#philosophy">Philosophy</a>
-            <a href="#career">Career Compass</a>
             <a href="#upwork">Upwork</a>
             <a href="#skills">Skills</a>
             <a href="#certifications">Certifications</a>
@@ -603,7 +493,9 @@
                 <h3>✨ Legacy Through Amplification</h3>
                 <p>My existential purpose: To be an intellectual signal booster. I measure impact not by personal glory but by how many minds I help tune to the universe's frequency. When we empower others to see patterns and ask better questions, we collectively evolve the human story.</p>
             </div>
-            
+        </div>
+        
+        
             <div class="philosophy-item">
                 <h3>🏷️ The Life Tax Paradox</h3>
                 <p>I recognize that much of existence feels like paying "life taxes" - necessary efforts that enable our moments of freedom. My mission is to transform these transactions from burdens into meaningful investments, finding purpose even in the mundane.</p>
@@ -620,170 +512,7 @@
             <div class="quote-pulse"></div>
         </blockquote>
     </section>
-    
-    <section id="career" class="career-compass">
-        <h2>Career Compass</h2>
-        
-        <div class="profile-insights">
-            <h3>Psychological Profile</h3>
-            <p>Your reflections reveal a deeply compassionate individual who values stability, family bonds, and meaningful work-life balance. Key traits:</p>
-            <ul>
-                <li><strong>Family-centric worldview</strong> - Relationships provide existential security</li>
-                <li><strong>Stability seeker</strong> - Prefers predictable routines over ambiguity</li>
-                <li><strong>Harm-avoidant ethics</strong> - Prioritizes not causing harm over grand impact</li>
-                <li><strong>Internal conflict</strong> - Desire for growth vs comfort in familiarity</li>
-                <li><strong>Analytical self-awareness</strong> - Clear understanding of personal needs and limitations</li>
-            </ul>
-            <p>These traits point toward roles that offer structured environments with clear expectations, limited public interaction, and opportunities for deep focus work.</p>
-        </div>
-        
-        <h3>Top 10 Career Recommendations</h3>
-        <div class="career-grid">
-            <div class="career-card">
-                <h3>1. Business Intelligence Analyst</h3>
-                <p>Transform data into insights using Power BI/Tableau. Focused work with predictable cycles.</p>
-                <p><strong>Salary:</strong> $40-65/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>UnitedHealth Group</li>
-                    <li>Liberty Mutual</li>
-                    <li>Capital One</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>2. Logistics Optimization Specialist</h3>
-                <p>Apply Six Sigma to improve supply chains. Back-office role with measurable outcomes.</p>
-                <p><strong>Salary:</strong> $45-70/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>FedEx Corporate</li>
-                    <li>XPO Logistics</li>
-                    <li>CH Robinson</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>3. Data Quality Analyst</h3>
-                <p>Ensure data integrity with routine checks. Highly structured with clear metrics.</p>
-                <p><strong>Salary:</strong> $35-55/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>Experian</li>
-                    <li>Equifax</li>
-                    <li>TransUnion</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>4. Procurement Analyst</h3>
-                <p>Manage vendor relationships and RFQs. Leverage your Maximo experience.</p>
-                <p><strong>Salary:</strong> $40-60/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>Lockheed Martin</li>
-                    <li>Northrop Grumman</li>
-                    <li>General Dynamics</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>5. Financial Reporting Specialist</h3>
-                <p>Create standardized reports for internal stakeholders. Predictable cycles.</p>
-                <p><strong>Salary:</strong> $45-65/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>Fidelity Investments</li>
-                    <li>Vanguard</li>
-                    <li>T. Rowe Price</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>6. Process Documentation Specialist</h3>
-                <p>Create SOPs and training materials. Solo work with occasional team check-ins.</p>
-                <p><strong>Salary:</strong> $35-50/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>IBM</li>
-                    <li>Oracle</li>
-                    <li>Docusign</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>7. Inventory Systems Analyst</h3>
-                <p>Manage inventory databases and reporting. Build on Army logistics experience.</p>
-                <p><strong>Salary:</strong> $40-60/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>Walmart Corporate</li>
-                    <li>Home Depot</li>
-                    <li>Lowe's</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>8. Healthcare Data Analyst</h3>
-                <p>Work with patient data systems. Combines healthcare and analytics experience.</p>
-                <p><strong>Salary:</strong> $45-65/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>Kaiser Permanente</li>
-                    <li>Johns Hopkins</li>
-                    <li>Mayo Clinic</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>9. Compliance Analyst</h3>
-                <p>Ensure regulatory adherence. Structured role with clear guidelines.</p>
-                <p><strong>Salary:</strong> $40-60/hr</p>
-                <p><strong>Companies:</strong></p>
-                <ul class="company-list">
-                    <li>JPMorgan Chase</li>
-                    <li>Bank of America</li>
-                    <li>Wells Fargo</li>
-                </ul>
-            </div>
-            
-            <div class="career-card">
-                <h3>10. Freelance Data Consultant</h3>
-                <p>Expand your Upwork success with selective clients. Full control over workload.</p>
-                <p><strong>Salary:</strong> $50-100/hr</p>
-                <p><strong>Platforms:</strong></p>
-                <ul class="company-list">
-                    <li>Upwork Pro</li>
-                    <li>Toptal</li>
-                    <li>Catalant</li>
-                </ul>
-            </div>
-        </div>
-        
-        <h3>Job Search Strategy</h3>
-        <div class="strategy-grid">
-            <div class="strategy-item">
-                <h4>🛡️ Filter Tactically</h4>
-                <p>Search for "back office" and "operations" roles. Avoid "client-facing" or "sales" positions.</p>
-            </div>
-            
-            <div class="strategy-item">
-                <h4>⚙️ Highlight Process Skills</h4>
-                <p>Emphasize your Six Sigma certification and process optimization experience.</p>
-            </div>
-            
-            <div class="strategy-item">
-                <h4>🏢 Target Large Corporations</h4>
-                <p>Big companies have standardized roles with clearer boundaries between work and personal time.</p>
-            </div>
-            
-            <div class="strategy-item">
-                <h4>📊 Focus on Data Roles</h4>
-                <p>Prioritize positions where your analytical strengths can shine without public interaction.</p>
-            </div>
-        </div>
-    </section>
-    
+       
     <section id="upwork" class="upwork">
         <h2>My Upwork Profile</h2>
         <p>I am a Top-Rated Freelance Consultant on Upwork, specializing in data analysis, financial modeling, process optimization, and strategic reporting. My work spans various industries, including finance, defense, and consulting. I have a proven record of delivering high-quality projects on time, maintaining clear communication, and exceeding client expectations.</p>
@@ -841,7 +570,7 @@
         <h2>Certifications</h2>
         
         <div class="cert-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--primary-color)">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
             <div class="cert-info">
@@ -915,3 +644,4 @@
     </script>
 </body>
 </html>
+
