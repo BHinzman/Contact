@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brett Hinzman - Data Analyst & Procurement Specialist</title>
+    <title>Brett Hinzman - Digital Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         :root {
             --primary-color: #8e44ad;
             --secondary-color: #2980b9;
-            --accent-color: #2ecc71;
             --background-color: #0d0d0d;
-            --card-bg-color: #1c1c2a;
             --text-color: #e0e0e0;
-            --header-height: 80px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
@@ -32,66 +22,45 @@
             background-color: var(--background-color);
             color: var(--text-color);
             overflow-x: hidden;
-            line-height: 1.6;
-            text-align: center;
         }
 
         header {
-            background-color: rgba(34, 34, 34, 0.95);
+            background-color: rgba(34, 34, 34, 0.8);
             backdrop-filter: blur(10px);
             color: #fff;
-            padding: 15px 20px;
+            padding: 20px;
             text-align: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
-            height: var(--header-height);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         header.scrolled {
-            padding: 10px 20px;
-            background-color: rgba(34, 34, 34, 0.98);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
+            padding: 10px;
+            background-color: rgba(34, 34, 34, 0.95);
         }
 
         header h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8em;
+            font-size: 2em;
             margin: 0;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
         }
 
         nav {
             display: flex;
-            gap: 25px;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: bold;
             transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
         }
 
         nav a::after {
@@ -99,7 +68,7 @@
             position: absolute;
             width: 100%;
             height: 2px;
-            bottom: -2px;
+            bottom: -5px;
             left: 0;
             background-color: var(--primary-color);
             transform: scaleX(0);
@@ -110,29 +79,17 @@
             transform: scaleX(1);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
         section {
             padding: 100px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
+            text-align: center;
         }
 
         .intro {
             background: linear-gradient(135deg, #13111c, #203a43, #41295a);
             color: #fff;
-            padding: 180px 20px 100px;
+            padding: 200px 20px;
             position: relative;
             overflow: hidden;
-            text-align: center;
-            margin-top: var(--header-height);
         }
 
         .intro::before {
@@ -146,18 +103,12 @@
             z-index: 1;
         }
 
-        .intro-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .intro h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+            font-size: 4em;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 2;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             background-clip: text;
             -webkit-background-clip: text;
@@ -166,298 +117,180 @@
         }
 
         .intro p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.8s ease-in-out;
+            font-size: 1.5em;
+            position: relative;
+            animation: fadeInUp 2s ease-in-out;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .intro-cta {
+        .about, .projects, .skills, .resume, .upwork, .philosophy, .linkedin {
+            background-color: #1c1c2a;
+            margin: 20px 0;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .about p, .projects p, .skills p, .resume p, .upwork p, .philosophy p, .linkedin p {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .about img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .about img:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+
+        .project-gallery {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
         }
 
-        .btn {
-            padding: 12px 30px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        .project-item {
+            background-color: #2c2c3c;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33% - 40px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .project-item:hover::before {
+            top: 100%;
+            left: 100%;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 10px 20px rgba(142, 68, 173, 0.7);
+        }
+
+        .project-item a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .project-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .skill-chart {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.33% - 40px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .skill-item:hover::after {
+            transform: scaleX(1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(142, 68, 173, 0.7);
+        }
+
+        .resume button, .linkedin button, .upwork-button {
+            padding: 15px 30px;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
-            border-radius: 50px;
-            font-weight: 600;
             cursor: pointer;
+            border-radius: 50px;
+            font-size: 1.2em;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        .resume button::before, .linkedin button::before, .upwork-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--text-color);
+        .resume button:hover::before, .linkedin button:hover::before, .upwork-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
-        .btn-outline:hover {
-            background: var(--primary-color);
-        }
-
-        .about, .projects, .skills, .resume, .upwork, .philosophy, .linkedin, .experience {
-            background-color: var(--card-bg-color);
-            margin: 40px auto;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 1s ease-in-out;
-            text-align: center;
+        .resume button:hover, .linkedin button:hover, .upwork-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(41, 128, 185, 0.5);
         }
 
         section h2 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 2.2rem;
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .about-img img {
-            border-radius: 15px;
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .about-img img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.4);
-        }
-
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .about-text p {
             margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: center;
         }
 
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .experience-item {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
-        .experience-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .experience-company {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .experience-date {
-            color: #aaa;
-            font-style: italic;
-        }
-
-        .experience-desc {
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        .experience-desc ul {
-            list-style-type: none;
-            text-align: left;
-            display: inline-block;
-        }
-
-        .experience-desc li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-            text-align: left;
-        }
-
-        .experience-desc li:before {
-            content: "•";
-            color: var(--primary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            justify-content: center;
-        }
-
-        .skill-category {
-            background: linear-gradient(145deg, #252525, #1a1a1a);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            margin: 0 auto;
-            max-width: 350px;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3);
-        }
-
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .skill-category h3 i {
-            color: var(--primary-color);
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .skill-tag {
-            background: rgba(41, 128, 185, 0.2);
-            color: var(--text-color);
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(41, 128, 185, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .project-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .project-item {
-            background: linear-gradient(145deg, #252525, #1a1a1a);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            max-width: 380px;
-        }
-
-        .project-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.25);
-        }
-
-        .project-item h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .project-item p {
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .project-meta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: auto;
-            justify-content: center;
-        }
-
-        .project-tool {
-            background: rgba(142, 68, 173, 0.2);
-            color: var(--text-color);
-            padding: 5px 12px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-        }
-
+        /* PHILOSOPHY SECTION ENHANCEMENTS */
         .philosophy-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin: 40px 0;
-            justify-content: center;
         }
 
         .philosophy-item {
@@ -469,9 +302,7 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             position: relative;
             overflow: hidden;
-            text-align: center;
-            margin: 0 auto;
-            max-width: 350px;
+            text-align: left;
         }
 
         .philosophy-item:hover {
@@ -493,11 +324,7 @@
             font-family: 'Orbitron', sans-serif;
             color: var(--primary-color);
             margin-top: 0;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            font-size: 1.4em;
         }
 
         .cosmic-quote {
@@ -524,40 +351,6 @@
             animation: pulse 3s infinite;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: rgba(34, 34, 34, 0.8);
-            margin-top: 60px;
-        }
-
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -568,403 +361,202 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
         @keyframes pulse {
             0% { transform: scale(0.8); opacity: 0.7; }
             50% { transform: scale(1.2); opacity: 0.3; }
             100% { transform: scale(0.8); opacity: 0.7; }
         }
 
-        /* Responsive Design */
         @media (max-width: 1024px) {
-            section {
-                padding: 80px 30px;
-            }
-            
-            .intro h1 {
-                font-size: 2.8em;
-            }
-            
-            .intro p {
-                font-size: 1.2em;
+            .skill-item, .philosophy-item {
+                width: calc(50% - 40px);
             }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 12px 15px;
-            }
-            
-            header h1 {
-                font-size: 1.5em;
-            }
-            
-            nav {
-                display: none;
-                position: absolute;
-                top: var(--header-height);
-                left: 0;
+            .project-item, .skill-item, .philosophy-item {
                 width: 100%;
-                background-color: rgba(34, 34, 34, 0.98);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             }
-            
-            nav.active {
-                display: flex;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
             section {
-                padding: 70px 20px;
-            }
-            
-            .about, .projects, .skills, .resume, .upwork, .philosophy, .linkedin, .experience {
-                padding: 30px;
-            }
-            
-            .intro {
-                padding: 150px 15px 80px;
-            }
-            
-            .intro h1 {
-                font-size: 2.2em;
-            }
-            
-            .intro p {
-                font-size: 1.1em;
-            }
-            
-            .project-gallery, .skills-grid, .philosophy-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .intro h1 {
-                font-size: 1.8em;
-            }
-            
-            section h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .contact-link {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .intro-cta {
-                flex-direction: column;
-                align-items: center;
+                padding: 80px 20px;
             }
         }
     </style>
 </head>
 <body>
     <header id="main-header">
-        <div class="header-container">
-            <h1>Brett Hinzman</h1>
-            <button class="mobile-menu-btn" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="main-nav">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#philosophy">Philosophy</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+        <h1>Welcome to My Digital Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#skills">Skills</a>
+            <a href="#upwork">Upwork</a>
+            <a href="#resume">Resume</a>
+            <a href="#linkedin">LinkedIn</a>
+        </nav>
     </header>
-
     <section id="intro" class="intro">
-        <div class="intro-content">
-            <h1>Data-Driven Analyst & Procurement Specialist</h1>
-            <p>Turning data into decisions that drive cost savings and operational efficiency</p>
-        </div>
+        <h1>Hi, I'm Brett Hinzman</h1>
+        <p>An analytical and curious professional with a passion for continuous learning, fearlessly embracing the future and all its opportunities.</p>
     </section>
-
     <section id="about" class="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Brett Hinzman">
-            </div>
-            <div class="about-text">
-                <p>I'm a <span class="highlight">data-driven analyst and procurement specialist</span> with expertise in transforming complex data into actionable insights that drive business decisions. I build interactive dashboards in Power BI and Excel, manage RFQs and vendor selection in IBM Maximo, and leverage IBM Cognos Analytics to achieve significant cost savings and operational efficiency.</p>
-                <p>With experience spanning defense, logistics, and freelance consulting, I've developed a unique skill set that combines <span class="highlight">technical expertise</span> with strategic thinking. I'm proficient in data visualization, statistical analysis, and process optimization, with a proven track record of delivering clear executive reporting that supports multi-million dollar planning.</p>
-                <p>I hold a Master of Science in Management from the University of Illinois Urbana-Champaign and a Bachelor of Business Administration in Finance from Towson University, both with high academic achievement.</p>
-            </div>
-        </div>
+        <img src="your-image-filename.jpg" alt="Brett Hinzman" />
+        <p>I'm a data-driven analyst and procurement specialist who turns data into decisions. I hold a Master's degree in Management and have a background spanning defense logistics, finance, and consulting. I thrive on using analytics to drive operational efficiency and cost savings, leveraging both technical expertise and strategic insight.</p>
+        <p>I've built interactive dashboards in Power BI and Excel, managed end-to-end procurement processes using IBM Maximo, and delivered clear executive reporting that supported over $4M in planning decisions. I'm a remote-ready, cross-functional team player—adept at translating complex analyses into actionable strategies and bridging the gap between technical details and big-picture goals. I'm also passionate about continuous learning, always exploring cutting-edge tools (from advanced Excel macros to AI-driven analytics) to solve complex problems and drive innovation.</p>
     </section>
-
-    <section id="experience" class="experience">
-        <h2>Professional Experience</h2>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">Logistics Analyst</div>
-                <div class="experience-company">Huntington Ingalls Industries</div>
-                <div class="experience-date">April 2025 - Present</div>
-            </div>
-            <div class="experience-desc">
-                <ul>
-                    <li>Engineer RFQs in IBM Maximo by gathering client requirements to solicit competitive bids</li>
-                    <li>Compare quotes on price, lead time, terms, and vendor performance to recommend award decisions</li>
-                    <li>Coordinate with Accounts Payable, Receiving, vendors, and requesters to resolve invoice and delivery issues</li>
-                    <li>Track more than 50 delivery timelines and enforce Net 30 payment practices</li>
-                    <li>Prepare weekly briefings on commitments, deliveries, and payments to inform $4M+ in planning</li>
-                    <li>Develop Excel dashboards with PivotTables to summarize spend delivery status and open actions for leadership</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">Freelance Consultant</div>
-                <div class="experience-company">Upwork (Remote, contract)</div>
-                <div class="experience-date">July 2024 - April 2025</div>
-            </div>
-            <div class="experience-desc">
-                <ul>
-                    <li>Crafted financial models to guide pricing and identify market opportunities for $5K-$50K client budgets</li>
-                    <li>Achieved 100% client satisfaction; praised for clarity, timeliness, and actionable insights</li>
-                    <li>Built a freelance practice by successfully managing end-to-end client engagements remotely</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">Inventory Management Specialist</div>
-                <div class="experience-company">U.S. Department of the Army</div>
-                <div class="experience-date">February 2021 - July 2024</div>
-            </div>
-            <div class="experience-desc">
-                <ul>
-                    <li>Managed nationwide uniform distribution for 20,000 soldiers while meeting deadlines and reducing waste</li>
-                    <li>Analyzed billing and supply data from 70+ installations, ensuring financial accuracy and resource alignment</li>
-                    <li>Produced executive level reports that improved contract decisions and stock level targets</li>
-                    <li>Created standardized instructions and visual guides, improving efficiency and compliance</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-chart-line"></i> Analytics & BI</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Tableau</span>
-                    <span class="skill-tag">IBM Cognos Analytics</span>
-                    <span class="skill-tag">Data Visualization</span>
-                    <span class="skill-tag">Statistical Analysis</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> Data & SQL</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Excel (PivotTables, Macros)</span>
-                    <span class="skill-tag">SQL (SELECT, JOIN, Filtering)</span>
-                    <span class="skill-tag">Data Cleaning</span>
-                    <span class="skill-tag">Data Modeling</span>
-                    <span class="skill-tag">Data Visualization</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-laptop-code"></i> Systems & Platforms</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">IBM Maximo</span>
-                    <span class="skill-tag">ServiceNow</span>
-                    <span class="skill-tag">Microsoft SharePoint</span>
-                    <span class="skill-tag">Microsoft Visio</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-people-group"></i> Collaboration</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Microsoft Teams</span>
-                    <span class="skill-tag">Microsoft Office Suite</span>
-                    <span class="skill-tag">Cross-functional Collaboration</span>
-                    <span class="skill-tag">Remote Work</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-boxes-packing"></i> Procurement & Operations</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Procurement (RFQs, Vendor Selection)</span>
-                    <span class="skill-tag">Inventory Management</span>
-                    <span class="skill-tag">ETA Tracking</span>
-                    <span class="skill-tag">Net 30 Compliance</span>
-                    <span class="skill-tag">Resource Allocation</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-brain"></i> AI & Emerging Tech</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Large Language Models (LLMs)</span>
-                    <span class="skill-tag">AI Research</span>
-                    <span class="skill-tag">Knowledge Retrieval</span>
-                    <span class="skill-tag">Process Automation</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="projects" class="projects">
-        <h2>Projects & Achievements</h2>
+        <h2>Projects</h2>
         <div class="project-gallery">
             <div class="project-item">
-                <h3>Logistics Dashboard Development</h3>
-                <p>Created comprehensive Excel dashboards with PivotTables to track spending, delivery status, and open actions, providing leadership with clear visibility into logistics operations.</p>
-                <div class="project-meta">
-                    <span class="project-tool">Excel</span>
-                    <span class="project-tool">PivotTables</span>
-                    <span class="project-tool">Data Visualization</span>
-                </div>
+                <h3>Procurement Analytics Dashboard</h3>
+                <p>Developed an interactive spending and delivery dashboard using Excel and Power BI. This tool visualized procurement data (50+ delivery timelines, budgets, vendor performance) and provided leadership with real-time insights, enabling data-driven decisions for a $4M+ program.</p>
             </div>
-            
             <div class="project-item">
-                <h3>Vendor Selection Optimization</h3>
-                <p>Developed a systematic approach to compare vendor quotes based on price, lead time, terms, and performance, resulting in improved procurement decisions and cost savings.</p>
-                <div class="project-meta">
-                    <span class="project-tool">IBM Maximo</span>
-                    <span class="project-tool">Vendor Analysis</span>
-                    <span class="project-tool">Cost-Benefit Analysis</span>
-                </div>
+                <h3>Financial Modeling &amp; Market Analysis</h3>
+                <p>Crafted dynamic financial models and market analyses for clients with budgets ranging from $5K to $50K. These models helped startups identify market opportunities, optimize pricing strategies, and forecast outcomes under various scenarios. Consistently earned 5-star reviews on Upwork by delivering actionable insights and exceeding client expectations.</p>
             </div>
-            
             <div class="project-item">
-                <h3>Financial Modeling for Clients</h3>
-                <p>Crafted detailed financial models that informed pricing strategies and identified market opportunities for clients with budgets ranging from $5K to $50K.</p>
-                <div class="project-meta">
-                    <span class="project-tool">Financial Modeling</span>
-                    <span class="project-tool">Market Analysis</span>
-                    <span class="project-tool">Excel</span>
-                </div>
-            </div>
-            
-            <div class="project-item">
-                <h3>Inventory Management System</h3>
-                <p>Managed nationwide uniform distribution for 20,000 soldiers while implementing processes that reduced waste and improved efficiency.</p>
-                <div class="project-meta">
-                    <span class="project-tool">Inventory Management</span>
-                    <span class="project-tool">Process Optimization</span>
-                    <span class="project-tool">Resource Allocation</span>
-                </div>
+                <h3>Army Logistics &amp; Inventory Management</h3>
+                <p>Managed a nationwide uniform distribution program for 20,000+ U.S. Army soldiers, coordinating inventory and deliveries across 70+ installations. Analyzed supply and billing data to ensure financial accuracy and resource alignment, which reduced waste and enhanced readiness. Implemented standardized processes and data-driven reports that improved compliance and informed better contract decisions.</p>
             </div>
         </div>
     </section>
-
     <section id="philosophy" class="philosophy">
-        <h2>Professional Philosophy</h2>
+        <h2>Cosmic Curiosity & Existential Momentum</h2>
         
         <div class="philosophy-container">
             <div class="philosophy-item">
-                <h3>🌌 Data as a Strategic Asset</h3>
-                <p>I believe data is the modern organization's most valuable asset. My approach involves transforming raw data into actionable intelligence that drives strategic decision-making and creates tangible business value.</p>
+                <h3>🌌 The Universe in a Grain of Data</h3>
+                <p>I perceive existence as layered universes, from quantum foam to galactic superclusters, each revealing profound patterns when examined with wonder. Data isn't just numbers; it's the universe whispering its secrets through mathematical poetry. My analytical work is how I listen.</p>
             </div>
             
             <div class="philosophy-item">
-                <h3>♾️ Continuous Learning</h3>
-                <p>In the rapidly evolving fields of data analytics and procurement, continuous learning is essential. I stay at the forefront of industry trends, tools, and methodologies to deliver cutting-edge solutions.</p>
+                <h3>♾️ The Eternal Student Principle</h3>
+                <p>True expertise lies in maintaining a beginner's mind. I approach technology like quantum physics: the more I learn, the more I realize everything connects in beautiful, unexpected ways. Mastery isn't a destination but a continuous state of becoming.</p>
             </div>
             
             <div class="philosophy-item">
-                <h3>⚡ Efficiency Through Innovation</h3>
-                <p>I champion innovative approaches to traditional processes, leveraging technology to streamline operations, reduce costs, and enhance overall organizational efficiency.</p>
+                <h3>⚡ Ethical Accelerationism</h3>
+                <p>While technology evolves at exponential speed, our humanity must remain the control system. I champion the <strong>Red Queen Hypothesis of Progress</strong>: We must run ethically just to maintain our position. Every algorithmic advancement should elevate consciousness, not just capability.</p>
             </div>
             
             <div class="philosophy-item">
-                <h3>🌱 Ethical Data Practices</h3>
-                <p>I maintain rigorous ethical standards in data handling and analysis, ensuring transparency, accuracy, and responsible use of information in all business decisions.</p>
+                <h3>🌱 The Optimistic Singularity</h3>
+                <p>I anticipate a future where human intuition merges with machine intelligence to solve grand challenges. Imagine analytics that doesn't just predict supply chains but models ecosystem restoration. Envision AI that translates whale songs while optimizing cancer treatment algorithms. This isn't sci-fi, it's the horizon we're racing toward.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>🧠 The Mind as a Playground</h3>
+                <p>Data visualization is my cognitive rollercoaster, where raw information becomes experiential insight. Like a child spinning on a merry-go-round, I seek that vertigo moment when complex patterns suddenly click into elegant clarity.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>✨ Legacy Through Amplification</h3>
+                <p>My existential purpose: To be an intellectual signal booster. I measure impact not by personal glory but by how many minds I help tune to the universe's frequency. When we empower others to see patterns and ask better questions, we collectively evolve the human story.</p>
+            </div>
+        
+            <div class="philosophy-item">
+                <h3>🏷️ The Life Tax Paradox</h3>
+                <p>I recognize that much of existence feels like paying "life taxes" - necessary efforts that enable our moments of freedom. My mission is to transform these transactions from burdens into meaningful investments, finding purpose in everyday moments.</p>
+            </div>
+            
+            <div class="philosophy-item">
+                <h3>❤️ The Family Constellation Principle</h3>
+                <p>My family is my existential anchor. Like stars in a personal cosmos, their presence gives structure to my universe. This bond transcends earthly concerns, shaping my understanding of legacy and connection in both this life and whatever may follow.</p>
             </div>
         </div>
         
         <blockquote class="cosmic-quote">
-            "We're not just analyzing data; we're decoding the story of business performance. Every insight gained is another piece of the puzzle that helps organizations optimize their operations and achieve their strategic goals."
+            "We're not just analyzing data, we're decoding reality's source code. Every insight gained is another star mapped in humanity's cognitive constellation, and every moment with loved ones is a celestial event worth treasuring."
             <div class="quote-pulse"></div>
         </blockquote>
     </section>
-
-    <section id="contact" class="linkedin">
-        <h2>Contact Information</h2>
-        <p>Feel free to reach out through any of the following channels:</p>
-        
-        <div class="contact-links">
-            <a href="mailto:Brett.Hinzman@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="https://www.linkedin.com/in/BrettHinzman" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://www.upwork.com/freelancers/~011872137c30cbe790?viewMode=1" target="_blank" class="contact-link">
-                <i class="fab fa-upwork"></i> Upwork
-            </a>
-            <a href="tel:443-643-6778" class="contact-link">
-                <i class="fas fa-phone"></i> Call Me
-            </a>
+       
+    <section id="upwork" class="upwork">
+        <h2>My Upwork Profile</h2>
+        <p>I am a Top-Rated freelance consultant on Upwork, specializing in data analysis, financial modeling, process optimization, and strategic reporting. My work spans various industries, including finance, defense, and consulting. I have a proven record of delivering high-quality projects on time, maintaining clear communication, and consistently exceeding client expectations&mdash;reflected in a 100% Job Success Score and 5-star client reviews.</p>
+        <p>Visit my Upwork profile to learn more about my experience and client reviews:</p>
+        <a href="https://www.upwork.com/freelancers/~011872137c30cbe790?viewMode=1" target="_blank" rel="noopener noreferrer">
+            <button class="upwork-button">View My Upwork Profile</button>
+        </a>
+    </section>
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skill-chart">
+            <div class="skill-item">
+                <h3>Data Analysis &amp; SQL</h3>
+                <p>Proficient in data cleaning, integration, and analysis using Excel and SQL. Able to handle large datasets, perform statistical analysis, and extract insights to support decision-making.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Business Intelligence &amp; Dashboarding</h3>
+                <p>Experienced in building interactive dashboards and reports using Power BI, Tableau, and IBM Cognos Analytics. Adept at visualizing complex data to communicate trends and key metrics effectively.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Procurement &amp; Operations Management</h3>
+                <p>Skilled in end-to-end procurement processes using systems like IBM Maximo. Focused on efficient vendor selection, contract compliance, and effective inventory management to ensure timely fulfillment.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Financial Modeling &amp; Analysis</h3>
+                <p>Expertise in building financial models for budgeting, pricing, and investment analysis. Adept at scenario planning and translating complex financial data into strategic insights.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Process Improvement &amp; Strategy</h3>
+                <p>Adept at process mapping, root cause analysis, and continuous improvement methodologies. Proven ability to optimize workflows, enhance productivity, and drive organizational change.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Risk Management &amp; Compliance</h3>
+                <p>Experienced in identifying, assessing, and mitigating risks across projects while maintaining quality and compliance standards. Proactive in using SWOT analysis and risk assessments to anticipate and address potential issues.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Leadership &amp; Collaboration</h3>
+                <p>Proven track record of leading teams and projects in high-pressure environments. Strong collaborator who communicates effectively with stakeholders to align objectives and achieve results.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Communication &amp; Reporting</h3>
+                <p>Excellent at distilling complex data into clear, compelling narratives. Skilled in crafting executive reports, visual dashboards, and presentations tailored to diverse audiences.</p>
+            </div>
+            <div class="skill-item">
+                <h3>AI &amp; Continuous Learning</h3>
+                <p>Passionate about staying at the cutting edge of technology and best practices. Continuously learning new tools (including leveraging LLMs for research and automation) to drive innovation and improve performance.</p>
+            </div>
         </div>
     </section>
-
+    <section id="resume" class="resume">
+        <h2>Resume</h2>
+        <p>Click the button below to download my resume.</p>
+        <a href="Brett_Hinzman_Resume.pdf" download="Brett_Hinzman_Resume.pdf"><button>Download Resume</button></a>
+    </section>
+    <section id="linkedin" class="linkedin">
+        <h2>LinkedIn</h2>
+        <p>View my profile and follow me on LinkedIn.</p>
+        <a href="https://www.linkedin.com/in/bretthinzman/" target="_blank" rel="noopener noreferrer"><button>View LinkedIn Profile</button></a>
+    </section>
     <footer>
         <p>&copy; 2025 Brett Hinzman. All rights reserved.</p>
     </footer>
-
     <script>
         const navLinks = document.querySelectorAll('nav a');
         const header = document.getElementById('main-header');
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
 
-        // Smooth scrolling for navigation links
         navLinks.forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
-                
                 window.scrollTo({
                     top: targetSection.offsetTop - header.offsetHeight,
                     behavior: 'smooth'
                 });
-                
-                // Close mobile menu after clicking a link
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                }
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
@@ -973,34 +565,15 @@
             }
         });
 
-        // Mobile menu toggle
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            const isClickInsideNav = mainNav.contains(event.target);
-            const isClickInsideToggle = menuToggle.contains(event.target);
-            
-            if (!isClickInsideNav && !isClickInsideToggle && mainNav.classList.contains('active')) {
-                mainNav.classList.remove('active');
-            }
-        });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
