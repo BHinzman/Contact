@@ -125,7 +125,7 @@
             margin: 0 auto;
         }
 
-        .about, .projects, .skills, .resume, .upwork, .philosophy, .linkedin {
+        .about, .projects, .skills, .resume, .philosophy, .linkedin {
             background-color: #1c1c2a;
             margin: 20px 0;
             padding: 50px;
@@ -133,7 +133,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
-        .about p, .projects p, .skills p, .resume p, .upwork p, .philosophy p, .linkedin p {
+        .about p, .projects p, .skills p, .resume p, .philosophy p, .linkedin p {
             animation: slideIn 1.5s ease-in-out;
         }
 
@@ -241,7 +241,7 @@
             box-shadow: 0 10px 20px rgba(142, 68, 173, 0.7);
         }
 
-        .resume button, .linkedin button, .upwork-button {
+        .resume button, .linkedin button {
             padding: 15px 30px;
             background-color: var(--primary-color);
             color: #fff;
@@ -254,7 +254,7 @@
             overflow: hidden;
         }
 
-        .resume button::before, .linkedin button::before, .upwork-button::before {
+        .resume button::before, .linkedin button::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -267,12 +267,12 @@
             transition: width 0.5s ease, height 0.5s ease;
         }
 
-        .resume button:hover::before, .linkedin button:hover::before, .upwork-button:hover::before {
+        .resume button:hover::before, .linkedin button:hover::before {
             width: 300px;
             height: 300px;
         }
 
-        .resume button:hover, .linkedin button:hover, .upwork-button:hover {
+        .resume button:hover, .linkedin button:hover, {
             background-color: var(--secondary-color);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(41, 128, 185, 0.5);
@@ -396,7 +396,6 @@
             <a href="#projects">Projects</a>
             <a href="#philosophy">Philosophy</a>
             <a href="#skills">Skills</a>
-            <a href="#upwork">Upwork</a>
             <a href="#resume">Resume</a>
             <a href="#linkedin">LinkedIn</a>
         </nav>
@@ -479,14 +478,6 @@
         </blockquote>
     </section>
        
-    <section id="upwork" class="upwork">
-        <h2>My Upwork Profile</h2>
-        <p>I am a Top-Rated freelance consultant on Upwork, specializing in data analysis, financial modeling, process optimization, and strategic reporting. My work spans various industries, including finance, defense, and consulting. I have a proven record of delivering high-quality projects on time, maintaining clear communication, and consistently exceeding client expectations&mdash;reflected in a 100% Job Success Score and 5-star client reviews.</p>
-        <p>Visit my Upwork profile to learn more about my experience and client reviews:</p>
-        <a href="https://www.upwork.com/freelancers/~011872137c30cbe790?viewMode=1" target="_blank" rel="noopener noreferrer">
-            <button class="upwork-button">View My Upwork Profile</button>
-        </a>
-    </section>
     <section id="skills" class="skills">
         <h2>Skills</h2>
         <div class="skill-chart">
@@ -581,3 +572,4 @@
     </script>
 </body>
 </html>
+
