@@ -149,7 +149,7 @@
             color: transparent;
             -webkit-text-fill-color: transparent;
         }
-        #intro p {
+        #intro .tagline {
             font-size: 1.5em;
             max-width: 800px;
             margin: 20px auto 0 auto;
@@ -168,6 +168,12 @@
         }
 
         /* About Me Section Styles */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
         .about img {
             width: 200px;
             height: 200px;
@@ -181,60 +187,28 @@
             transform: scale(1.1) rotate(5deg);
             box-shadow: 0 0 20px var(--primary-color);
         }
+        .bio {
+            flex: 1;
+        }
 
         /* Projects Section Styles */
-        .project-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .project-item {
-            position: relative;
-            overflow: hidden;
-            flex: 1 1 calc(33% - 40px);
-            min-width: 250px;
+        .project {
             background-color: #2c2c3c;
-            padding: 20px;
+            padding: 30px;
+            margin: 30px 0;
             border-radius: 10px;
+            text-align: left;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .project-item::before {
-            /* Shimmer overlay on hover */
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: all 0.5s ease;
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.7);
         }
-        .project-item:hover::before {
-            top: 100%;
-            left: 100%;
-        }
-        .project-item:hover {
-            transform: scale(1.03) translateY(-5px);
-            box-shadow: 0 10px 20px rgba(155, 89, 182, 0.7);  /* purple glow */
-        }
-        .project-item h3 {
+        .project h3 {
             margin-top: 0;
-            font-size: 1.2em;
-        }
-        .project-item p {
-            text-align: left;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-        .project-item a {
-            color: #fff;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-        .project-item a:hover {
             color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
         }
 
         /* Philosophy Section Styles */
@@ -285,7 +259,7 @@
             font-size: 1em;
             line-height: 1.6;
         }
-        .cosmic-quote {
+        .philosophy blockquote {
             font-style: italic;
             font-size: 1.2em;
             font-weight: 300;
@@ -297,16 +271,6 @@
             background: rgba(41, 128, 185, 0.1);
             position: relative;
         }
-        .quote-pulse {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            width: 40px;
-            height: 40px;
-            background: rgba(41, 128, 185, 0.2);
-            border-radius: 50%;
-            animation: pulse 3s infinite;
-        }
 
         /* Skills Section Styles */
         .skills h2 {
@@ -315,50 +279,43 @@
             color: var(--primary-color);
             margin-bottom: 20px;
         }
-        .skill-chart {
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 30px;
             justify-content: center;
-            gap: 20px;
         }
-        .skill-item {
-            position: relative;
-            overflow: hidden;
-            flex: 1 1 calc(33% - 40px);
+        .skills-category {
+            flex: 1;
             min-width: 250px;
             background-color: #444;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
+            text-align: left;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .skill-item:hover {
+        .skills-category:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(155, 89, 182, 0.7);
         }
-        .skill-item::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-        }
-        .skill-item:hover::after {
-            transform: scaleX(1);
-        }
-        .skill-item h3 {
-            font-size: 1.2em;
+        .skills-category h3 {
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
             margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
         }
-        .skill-item p {
-            text-align: left;
-            font-size: 0.95em;
-            line-height: 1.5;
+        .skills-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .skills-category li:last-child {
+            border-bottom: none;
         }
 
         /* Resume & LinkedIn Sections (Call-to-Action Buttons) */
@@ -432,7 +389,11 @@
 
         /* Responsive Design: Tablet */
         @media (max-width: 1024px) {
-            .project-item, .skill-item, .philosophy-item {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .skills-category {
                 flex: 1 1 calc(50% - 40px);
             }
         }
@@ -448,8 +409,14 @@
             section {
                 padding: 80px 20px;
             }
-            .project-item, .skill-item, .philosophy-item {
+            .skills-category {
                 flex: 1 1 100%;
+            }
+            #intro h1 {
+                font-size: 2.5em;
+            }
+            #intro .tagline {
+                font-size: 1.2em;
             }
         }
 
@@ -484,119 +451,113 @@
         <!-- Intro Section -->
         <section id="intro" class="intro">
             <h1>Hi, I'm Brett Hinzman</h1>
-            <p>An analytical and curious professional with a passion for continuous learning, fearlessly embracing the future and all its opportunities.</p>
+            <p class="tagline">I help organizations find clarity in complexity, using data to illuminate the path forward.</p>
         </section>
 
         <!-- About Me Section -->
         <section id="about" class="about fade-in">
             <h2>About Me</h2>
-            <img src="your-image-filename.jpg" alt="Portrait of Brett Hinzman" />
-            <p>My career journey has been anything but linear: from solving supply chain puzzles for the U.S. Army to building financial models for startups, I've always been guided by one principle – turn data into actionable decisions. I earned a Master's degree in Management while working across defense, finance, and consulting, learning along the way that whether I'm on a military base or in a boardroom, the right data can illuminate the path forward.</p>
-            <p>For me, analytics isn't just about numbers – it's about empowering others with insight. I've designed interactive dashboards that give leaders real-time visibility and streamlined procurement processes that save time and money. In one role, my Power BI and Excel tools brought clarity to over $4M in budget decisions; in another, the data-driven reports I created helped reduce waste and improve compliance in Army logistics. I'm as comfortable diving deep into an Excel macro as I am explaining the story behind the data to an executive audience.</p>
-            <p>I'm also a firm believer in continuous learning. I'm always exploring new tools and technologies – from mastering advanced Excel macros to leveraging AI-driven analytics – to solve complex problems and drive innovation. Whether working remotely or on-site, I thrive in collaborative environments, translating complex analyses into actionable strategy and bridging the gap between technical detail and big-picture vision.</p>
+            <div class="about-content">
+                <div class="portrait">
+                    <img src="your-image-filename.jpg" alt="Portrait of Brett Hinzman" />
+                </div>
+                <div class="bio">
+                    <p>My journey reads less like a straight line and more like a constellation—each point connected by curiosity and purpose. From ensuring soldiers had the gear they needed to helping startups find their financial footing, I've learned that every complex system, whether military logistics or market dynamics, shares a common truth: the right insight at the right moment changes everything.</p>
+
+                    <p>I earned my Master's in Management while navigating the unique challenges of defense, finance, and consulting. What stayed constant across these worlds wasn't just the data, but the human need to understand it. That's where I found my calling—not in the numbers themselves, but in the stories they tell and the decisions they empower.</p>
+
+                    <p>I've built dashboards that turned $4M budget questions into clear, confident choices. I've designed processes that saved time, reduced waste, and helped leaders sleep better at night. To me, the most beautiful spreadsheet is one that helps someone see what was previously invisible.</p>
+
+                    <p>When I'm not deep in data, I'm probably deep in thought—about where technology is taking us, what we're becoming as a species, and how we can steer progress toward more meaningful human outcomes. I believe in learning not as a task, but as a way of moving through the world.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="projects fade-in">
             <h2>Projects</h2>
-            <div class="project-gallery">
-                <div class="project-item">
-                    <h3>Procurement Analytics Dashboard</h3>
-                    <p>I developed an interactive procurement dashboard using Excel and Power BI to track over 50 delivery timelines, budgets, and vendor performance indicators. Leadership used these real-time insights to steer a critical $4M program, making confident, data-driven decisions that improved on-time deliveries and budget alignment.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Financial Modeling &amp; Market Analysis</h3>
-                    <p>As a freelance consultant, I crafted dynamic financial models and market analyses for clients with budgets from $5K to $50K. These tools helped startups identify market opportunities, optimize pricing strategies, and forecast outcomes under various scenarios. By consistently delivering actionable insights and exceeding expectations, I earned 5-star client reviews and repeat engagements on Upwork.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Army Logistics &amp; Inventory Management</h3>
-                    <p>I managed a nationwide uniform distribution program for 20,000+ U.S. Army soldiers across 70+ installations. By analyzing supply and billing data, I ensured every soldier received essential gear on time and that financial records were accurate. Implementing standardized, data-driven processes reduced waste, improved contract compliance, and helped leadership make better decisions to enhance military readiness.</p>
-                </div>
+            
+            <div class="project">
+                <h3>Procurement Analytics Dashboard</h3>
+                <p>Leadership was navigating a critical $4M program with limited visibility. They needed to track dozens of delivery timelines, budgets, and vendor relationships—but the data lived in scattered spreadsheets and emails.</p>
+                <p>I built an interactive dashboard in Excel and Power BI that transformed uncertainty into clarity. Suddenly, decision-makers could see the entire procurement landscape at a glance. The result? Better-aligned budgets, improved on-time deliveries, and the confidence that comes from seeing the whole picture.</p>
+            </div>
+
+            <div class="project">
+                <h3>Financial Modeling & Market Analysis</h3>
+                <p>Startups came to me with big questions and limited data. They needed to understand their market position, pricing potential, and growth opportunities—but lacked the analytical framework to make informed decisions.</p>
+                <p>I developed dynamic financial models and market analyses that became their strategic compass. These tools helped them identify hidden opportunities, test scenarios, and build business cases that attracted investment. The five-star reviews and repeat engagements weren't just about the analysis—they were about giving founders the confidence to move forward.</p>
+            </div>
+
+            <div class="project">
+                <h3>Army Logistics & Inventory Management</h3>
+                <p>Imagine ensuring 20,000 soldiers across 70+ installations have the uniforms and equipment they need, when they need them. The challenge wasn't just scale—it was accuracy, timing, and accountability.</p>
+                <p>By implementing data-driven processes and analyzing supply patterns, we transformed uniform distribution from a constant challenge into a reliable system. We reduced waste, improved contract compliance, and most importantly, ensured soldiers could focus on their missions rather than their gear. The data didn't just optimize logistics—it supported readiness.</p>
             </div>
         </section>
 
         <!-- Philosophy Section -->
         <section id="philosophy" class="philosophy fade-in">
-            <h2>Cosmic Curiosity &amp; Existential Momentum</h2>
+            <h2>Philosophy</h2>
             <div class="philosophy-container">
                 <div class="philosophy-item">
-                    <h3>The Universe in a Grain of Data</h3>
-                    <p>I perceive existence as layered universes, from quantum foam to galactic superclusters, each revealing profound patterns when examined with wonder. Data isn't just numbers; it's the universe whispering its secrets through mathematical poetry. My analytical work is how I listen.</p>
+                    <h3>Data as a Human Language</h3>
+                    <p>I see data as the universe's way of communicating patterns. My work is about learning to listen—then translating what I hear into something that helps people make better decisions, see new possibilities, and understand their world more deeply.</p>
                 </div>
+
                 <div class="philosophy-item">
-                    <h3>The Eternal Student Principle</h3>
-                    <p>True expertise lies in maintaining a beginner's mind. I approach technology like quantum physics: the more I learn, the more I realize everything connects in beautiful, unexpected ways. Mastery isn't a destination but a continuous state of becoming.</p>
+                    <h3>The Beginner's Mind</h3>
+                    <p>True expertise isn't about knowing everything—it's about remaining open to learning anything. I approach each new tool, technology, or challenge with curiosity rather than assumption. The most elegant solutions often come from seeing with fresh eyes.</p>
                 </div>
+
                 <div class="philosophy-item">
-                    <h3>Ethical Accelerationism</h3>
-                    <p>While technology evolves at exponential speed, our humanity must remain the control system. I champion the <strong>Red Queen Hypothesis of Progress</strong>: we must run ethically just to maintain our position. Every algorithmic advancement should elevate consciousness, not just capability.</p>
+                    <h3>Technology with Purpose</h3>
+                    <p>As innovation accelerates, our humanity must set the direction. I believe in progress that elevates not just capability, but consciousness. The most powerful algorithms are those that help us become more human, not less.</p>
                 </div>
+
                 <div class="philosophy-item">
-                    <h3>The Optimistic Singularity</h3>
-                    <p>I anticipate a future where human intuition merges with machine intelligence to solve grand challenges. Imagine analytics that doesn't just predict supply chains but models ecosystem restoration. Envision AI that translates whale songs while optimizing cancer treatment algorithms. This isn't sci-fi, it's the horizon we're racing toward.</p>
-                </div>
-                <div class="philosophy-item">
-                    <h3>The Mind as a Playground</h3>
-                    <p>Data visualization is my cognitive rollercoaster, where raw information becomes experiential insight. Like a child spinning on a merry-go-round, I seek that vertigo moment when complex patterns suddenly click into elegant clarity.</p>
-                </div>
-                <div class="philosophy-item">
-                    <h3>Legacy Through Amplification</h3>
-                    <p>My existential purpose is to be an intellectual signal booster. I measure impact not by personal glory but by how many minds I help tune to the universe's frequency. When we empower others to see patterns and ask better questions, we collectively evolve the human story.</p>
-                </div>
-                <div class="philosophy-item">
-                    <h3>The Life Tax Paradox</h3>
-                    <p>I recognize that much of existence feels like paying "life taxes" – necessary efforts that enable our moments of freedom. My mission is to transform these transactions from burdens into meaningful investments, finding purpose in everyday moments.</p>
-                </div>
-                <div class="philosophy-item">
-                    <h3>The Family Constellation Principle</h3>
-                    <p>My family is my existential anchor. Like stars in a personal cosmos, their presence gives structure to my universe. This bond transcends earthly concerns, shaping my understanding of legacy and connection in both this life and whatever may follow.</p>
+                    <h3>The Connection Principle</h3>
+                    <p>My family grounds me; they're the constant in my evolving understanding of legacy and impact. The work I do—the systems I build, the insights I uncover—is ultimately about creating connections that matter, whether between data points or between people.</p>
                 </div>
             </div>
-            <blockquote class="cosmic-quote">
-                "You dont flip a switch by pretending you're perfect. You flip it by refusing to keep calling yourself broken."
-                <div class="quote-pulse"></div>
+
+            <blockquote>
+                "You don't flip a switch by pretending you're perfect. You flip it by refusing to keep calling yourself broken."
             </blockquote>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="skills fade-in">
             <h2>Skills</h2>
-            <div class="skill-chart">
-                <div class="skill-item">
-                    <h3>Data Analysis &amp; SQL</h3>
-                    <p>Proficient in data cleaning, integration, and analysis using Excel and SQL. Comfortable handling large datasets, performing statistical analysis, and extracting actionable insights to support critical decision-making.</p>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Data & Analytics</h3>
+                    <ul>
+                        <li>Data Analysis & SQL</li>
+                        <li>Business Intelligence & Dashboarding (Power BI, Tableau)</li>
+                        <li>Financial Modeling & Analysis</li>
+                        <li>AI & Machine Learning Applications</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>Business Intelligence &amp; Dashboarding</h3>
-                    <p>Experienced in building interactive dashboards and reports using Power BI, Tableau, and IBM Cognos Analytics. Adept at visualizing complex data to communicate trends and key metrics effectively to stakeholders.</p>
+
+                <div class="skills-category">
+                    <h3>Operations & Strategy</h3>
+                    <ul>
+                        <li>Procurement & Operations Management</li>
+                        <li>Process Improvement & Optimization</li>
+                        <li>Risk Management & Compliance</li>
+                        <li>Strategic Planning & Execution</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>Procurement &amp; Operations Management</h3>
-                    <p>Skilled in end-to-end procurement processes using systems like IBM Maximo. Focused on efficient vendor selection, contract compliance, and effective inventory management to ensure timely fulfillment of requirements.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Financial Modeling &amp; Analysis</h3>
-                    <p>Expertise in building financial models for budgeting, pricing, and investment analysis. Adept at scenario planning and translating complex financial data into clear, strategic insights for decision makers.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Process Improvement &amp; Strategy</h3>
-                    <p>Adept at process mapping, root cause analysis, and continuous improvement methodologies. Proven ability to optimize workflows, enhance productivity, and drive positive organizational change.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Risk Management &amp; Compliance</h3>
-                    <p>Experienced in identifying, assessing, and mitigating risks across projects while maintaining quality and compliance standards. Proactive in using SWOT analysis and risk assessments to anticipate and address potential issues.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Leadership &amp; Collaboration</h3>
-                    <p>Proven track record of leading teams and projects in high-pressure environments. A collaborative leader who communicates effectively with stakeholders to align objectives and achieve impactful results.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Communication &amp; Reporting</h3>
-                    <p>Excellent at distilling complex data into clear, compelling narratives. Skilled in crafting executive reports, visual dashboards, and presentations tailored to both technical and non-technical audiences.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>AI &amp; Continuous Learning</h3>
-                    <p>Passionate about staying at the cutting edge of technology and best practices. Continuously learning new tools (including leveraging LLMs for research and automation) to drive innovation and improve performance.</p>
+
+                <div class="skills-category">
+                    <h3>Leadership & Communication</h3>
+                    <ul>
+                        <li>Team Leadership & Collaboration</li>
+                        <li>Stakeholder Communication</li>
+                        <li>Executive Reporting & Presentation</li>
+                        <li>Cross-functional Project Management</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -604,14 +565,14 @@
         <!-- Resume Section -->
         <section id="resume" class="resume fade-in">
             <h2>Resume</h2>
-            <p>Click the button below to view and download my resume (PDF).</p>
-            <a href="Brett_Hinzman_Resume.pdf" download="Brett_Hinzman_Resume.pdf" class="btn">Download Resume</a>
+            <p>For a detailed view of my experience and background, you can download my resume below.</p>
+            <a href="Brett_Hinzman_Resume.pdf" download="Brett_Hinzman_Resume.pdf" class="btn">Download Resume (PDF)</a>
         </section>
 
         <!-- LinkedIn Section -->
         <section id="linkedin" class="linkedin fade-in">
-            <h2>LinkedIn</h2>
-            <p>Connect with me on LinkedIn to follow my latest updates and professional journey.</p>
+            <h2>Let's Connect</h2>
+            <p>I share thoughts on data, technology, and the future of meaningful work on LinkedIn. Feel free to connect or reach out—I'm always interested in thoughtful conversations.</p>
             <a href="https://www.linkedin.com/in/bretthinzman/" target="_blank" rel="noopener noreferrer" class="btn">View LinkedIn Profile</a>
         </section>
     </main>
